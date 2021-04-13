@@ -1,0 +1,17 @@
+#json数据解析
+- config:
+    name: '验证获取所有标签'
+    base_url: 'https://api.weixin.qq.com'
+    export:
+      - tag_name
+- test:
+    name: 'exec get_access_token'
+    request:
+      method: 'GET'
+      url: '/cgi-bin/tags/get'
+      params:
+        access_token: '44_lcV201Y1JDFys4k3-KGQNECbiNFuvWHCGLu5m06REy6-5ijfZA-nNwVeLPNF60h-g6F89Mh7LFTBzgcZZyVmXetX_i-VWaPiR6fM_lESJdJePxg4gLIH2B6hG_Y_N8Tmvd13Yb8AzweIe3Q7OVTiAJAYFD'
+    extract:
+      - tag_name: content.tags.13.name
+    validate:
+      - eq: ["status_code",200]

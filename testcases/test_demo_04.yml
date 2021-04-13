@@ -1,0 +1,14 @@
+#模拟post请求
+- config:
+    name: '修改标签接口'
+    base_url: 'https://api.weixin.qq.com'
+- test:
+    name: '修改标签'
+    request:
+      method: 'POST'
+      url: '/cgi-bin/tags/update'
+      params:
+        access_token: '44_Zofgc80QDe_K_AwmRZMp1hwcXjWLHd9YWKcLcOP2WqXt8zzJ0agZp39lRX6URNpdObmK8cy2A7BGrTMUidC1KaodwoaP8SHhD2M9B3yWLDZcsdG_ZcxMi--MvBjvRLnJyiZh_7vS0C2l_TraFJChAAATXQ'
+      json: {"tag":{"id":140,"name":"dada"}}
+    validate:
+      - eq: ["status_code",200]
